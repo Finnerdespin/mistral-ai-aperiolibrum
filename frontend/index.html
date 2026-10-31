@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AperioLibrum - Library Management System</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Aperio<span>Librum</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="loans.html">My Loans</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="dashboard">
+            <div class="stat-card">
+                <h3>Total Books</h3>
+                <div class="stat-value" id="total-books">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Available Books</h3>
+                <div class="stat-value" id="available-books">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Active Loans</h3>
+                <div class="stat-value" id="active-loans">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Reservations</h3>
+                <div class="stat-value" id="pending-reservations">-</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <h3>Featured Books</h3>
+                <a href="books.html" class="btn btn-secondary">View All</a>
+            </div>
+            <div class="book-grid" id="featured-books">
+                <div class="spinner"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <h3>Quick Actions</h3>
+            </div>
+            <div class="card-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <a href="books.html" class="btn btn-primary">Browse Books</a>
+                    <a href="loans.html" class="btn btn-info">My Loans</a>
+                    <a href="reservations.html" class="btn btn-warning">My Reservations</a>
+                    <a href="profile.html" class="btn btn-secondary">My Profile</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>

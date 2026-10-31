@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AperioLibrum</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Aperio<span>Librum</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="loans.html">My Loans</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>My Profile</h3>
+            </div>
+            <div class="card-body">
+                <div class="user-profile" style="margin-bottom: 30px;">
+                    <div class="user-avatar" id="user-avatar">A</div>
+                    <div class="user-info">
+                        <h4 id="user-fullname">Loading...</h4>
+                        <p id="user-email">Loading...</p>
+                        <p id="user-username">Loading...</p>
+                    </div>
+                </div>
+                
+                <div id="profile-alert" class="alert" style="display: none;"></div>
+                
+                <h4 style="margin-bottom: 15px;">Account Information</h4>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="profile-username">Username</label>
+                        <input type="text" id="profile-username" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-fullname">Full Name</label>
+                        <input type="text" id="profile-fullname">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="update-profile-btn">Update Profile</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>My Fines</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Book</th>
+                            <th>Amount</th>
+                            <th>Reason</th>
+                            <th>Issued Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fines-table">
+                        <tr>
+                            <td colspan="5" style="text-align: center;">
+                                <div class="spinner"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - AperioLibrum</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Aperio<span>Librum</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html" class="active">Books</a></li>
+                    <li><a href="loans.html">My Loans</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Browse Books</h3>
+                <button class="btn btn-primary" id="add-book-btn">Add Book</button>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="book-search" placeholder="Search books by title or author...">
+            </div>
+            
+            <div class="book-grid" id="books-grid">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Book Modal -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="book-modal-title">Add Book</h2>
+                <span class="close" id="close-book-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="book-alert" class="alert" style="display: none;"></div>
+                <form id="book-form">
+                    <input type="hidden" id="book-id">
+                    <div class="form-group">
+                        <label for="book-title">Title *</label>
+                        <input type="text" id="book-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Author *</label>
+                        <input type="text" id="book-author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-isbn">ISBN *</label>
+                        <input type="text" id="book-isbn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-publisher">Publisher</label>
+                        <input type="text" id="book-publisher">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-published-date">Published Date</label>
+                        <input type="date" id="book-published-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-genre">Genre</label>
+                        <input type="text" id="book-genre">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-description">Description</label>
+                        <textarea id="book-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-total-copies">Total Copies</label>
+                        <input type="number" id="book-total-copies" value="1" min="1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-book-btn">Cancel</button>
+                <button type="button" class="btn btn-primary" id="save-book-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>

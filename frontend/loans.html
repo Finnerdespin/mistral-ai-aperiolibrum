@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Loans - AperioLibrum</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Aperio<span>Librum</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="loans.html" class="active">My Loans</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>My Loans</h3>
+                <button class="btn btn-primary" id="new-loan-btn">New Loan</button>
+            </div>
+            
+            <div id="loans-alert" class="alert" style="display: none;"></div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Loan Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="loans-table">
+                    <tr>
+                        <td colspan="6" style="text-align: center;">
+                            <div class="spinner"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- New Loan Modal -->
+    <div id="loan-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Loan</h2>
+                <span class="close" id="close-loan-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="loan-form-alert" class="alert" style="display: none;"></div>
+                <form id="loan-form">
+                    <div class="form-group">
+                        <label for="loan-book">Book *</label>
+                        <select id="loan-book" required>
+                            <option value="">Select a book</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="loan-due-date">Due Date *</label>
+                        <input type="date" id="loan-due-date" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-loan-btn">Cancel</button>
+                <button type="button" class="btn btn-primary" id="create-loan-btn">Create Loan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Loan Modal -->
+    <div id="return-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Return Book</h2>
+                <span class="close" id="close-return-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="return-confirmation-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-return-btn">Cancel</button>
+                <button type="button" class="btn btn-success" id="confirm-return-btn">Confirm Return</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/app.js"></script>
+</body>
+</html>
