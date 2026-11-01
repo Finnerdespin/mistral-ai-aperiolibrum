@@ -21,6 +21,11 @@ app = FastAPI(
     version="1.0.0",
 )
 
+# Serveer frontend statische bestanden
+from fastapi.staticfiles import StaticFiles
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/frontend", StaticFiles(directory="frontend", html=True), name="frontend")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -388,6 +393,16 @@ async def pay_fine(fine_id: int, current_user: User = Depends(get_librarian_user
 @app.get("/")
 async def root():
     return {"message": "Welcome to AperioLibrum API"}
+
+
+# Serveer de frontend
+@app.get("/app")
+async def serve_frontend():
+    from fastapi.responses import HTMLResponse
+    import os
+    index_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend", "index.html")
+    with open(index_path, "r") as f:
+        return HTMLResponse(content=f.read(), status_code=200)
 
 
 @app.get("/health")
